@@ -59,7 +59,7 @@ CVS_RSH="G_BROKEN_HISTCONTRHISTSIZE=....
 [root@bogon ~]# export | cut -c -12
 declare -x Cdeclare -x Gdeclare -x H....
 ```
-### grep
+#### grep
 
 基本语法：
 ```
@@ -100,7 +100,7 @@ reboot
 
 #### 排序命令： sort, wc, uniq
 
-sort命令
+#### sort命令
 
 基本语法：
 ```
@@ -164,7 +164,7 @@ root
      50 root
       1 wtmp
 ```
-####wc命令 -- 计算输出信息的整体数据
+#### wc命令 -- 计算输出信息的整体数据
 
 基本语法：
 ```
@@ -207,7 +207,7 @@ wc [-lwm]
      57     577    4389
 ```
 
-####双重定向：tee
+#### 双重定向：tee
 --将数据输入到文件同时在屏幕上显示
 
 基本语法：
@@ -268,9 +268,9 @@ dr-xr-xr-x.   4 root root  4096 12月 17 2016 boot
 
 
 
-####字符转换命令： tr，col, join, paste , expand
+#### 字符转换命令： tr，col, join, paste , expand
 
-tr命令
+#### tr命令
 
 ```
 tr [-ds] set1 ..
@@ -300,7 +300,7 @@ root     pts/2        192.168.0.107    Thu Jul 12 2321 - 0037  (0115)
 ```
 
 
-####col命令
+#### col命令
 将tab键换成对等的空格键，常用来将man page转存为纯文本文件 以方便查阅的功能
 ```
 col [-xb]
@@ -309,7 +309,7 @@ col [-xb]
 -b : 当文字内有反斜杠（/）时，仅保留反斜杠最后接的那个字符
 ```
 
-####join命令
+#### join命令
 
 将两个文件当中相同数据的哪一行加在一起
 
@@ -366,7 +366,7 @@ join: 文件1 没有被正确排序
 join: 文件2 没有被正确排序
 ...
 ```
-####paste命令
+#### paste命令
 直接将两行贴在一起，且中间以【tab】键隔开而已
 基本语法：
 ```
@@ -396,7 +396,7 @@ bin:x:1:1:bin:/bin:/sbin/nologin    bin:x:1:bin,daemon    bin:x:1:bin,daemon
 daemon:x:2:2:daemon:/sbin:/sbin/nologin    daemon:x:2:bin,daemon    daemon:x:2:bin,daemon
 ```
 
-####expand 命令
+#### expand 命令
 将[tab] 按键转成空格键
 基本语法
 ```
@@ -426,7 +426,7 @@ MANPATH     /usr/share/man$
 MANPATH     /usr/local/man$
 ```
 
-####切割命令： split
+#### 切割命令： split
 将一个文件依据文件大小或行数切割成小文件了
 基本语法：
 ```
@@ -456,7 +456,7 @@ lsrootaa  lsrootab  lsrootac  lsrootad
 -rw-r--r-- 1 root root  50 7月  15 23:23 lsrootad
 ```
 
-####参数代换：xargs
+#### 参数代换：xargs
 产生某个命令的意思
 基本语法
 ```
