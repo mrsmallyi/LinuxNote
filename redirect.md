@@ -37,21 +37,21 @@ rootfile : 该文件名可以自己随便取
 3. **2>** :  以 **覆盖** 的方法将 **错误** 据出到指定文件或设备上；
 4. **2>>** :  以 **累加**的方法将 **错误** 的数据出到指定文件或设备上；
 
-![Alt text](LinuxNote/redirect.md/1531144622928.png)
+![Alt text](../image/redirect/1531144622928.png)
 
 * 将正面数据跟错误信息分别输出到不同文件
 	
-![Alt text](./1531144733318.png)
+![Alt text](../image/redirect/1531144733318.png)
 
 * /dev/null垃圾桶黑洞设备与特性写法
  /dev/null 可以吃到任何导入该设备的信息
  
-![Alt text](LinuxNote/redirect.md/1531144913220.png)
+![Alt text](../image/redirect/1531144913220.png)
 
 * 将错误信息跟正确信息输出到同一个文件
 1> list   ** 2>&1**
 $> list
-![Alt text](./1531146509099.png)
+![Alt text](../image/redirect/1531146509099.png)
 
 **Standard input 文件输入操作 <与 << ：**
 
@@ -63,10 +63,10 @@ cat file test
 [user1@bogon ~]$ 
 ```
 使用 << "eof" 代替 ctrl + d 结束输入
-![Alt text](./1531147579094.png)
+![Alt text](../image/redirect/1531147579094.png)
 
 使用stdin 代替键盘输入以创建新文件
-![Alt text](./1531147357899.png)
+![Alt text](../image/redirect/1531147357899.png)
 
 
 使用命令輸出重定向的好处？
@@ -92,20 +92,20 @@ cat file test
 ```
 ls /tmp/abc && touch /tmp/abc/hehe
 ```
-![Alt text](./1531227991010.png)
+![Alt text](../image/redirect/1531227991010.png)
 
 ```
 ls /tmp/abc || mkdir  /tmp/abc
 ```
-![Alt text](./1531228101341.png)
+![Alt text](../image/redirect/1531228101341.png)
 
 ```
 ls /tmp/abc || mkdir /tmp/abc && touch /tmp/abc/hehe
 ```
 执行过程：先判断是否有/tmp/abc 目录，没有则创建/tmp/abc目录，返回$?=0 然后与&& 判断为正确，则创建hehe文件 
-![Alt text](./1531228167584.png)
+![Alt text](../image/redirect/1531228167584.png)
 
 ```
 ls /tmp/vbirding || echo "no exist" && echo "exist"
 ```
-![Alt text](./1531228569218.png)
+![Alt text](../image/redirect/1531228569218.png)
