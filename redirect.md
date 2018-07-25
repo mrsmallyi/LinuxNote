@@ -10,10 +10,11 @@ Standard error
 
 Standard output (标准输出)：命令执行所回传的正确的信息
 Standard error output (标准错误输出)：命令执行失败后，所回传的错误信息 
-传送所用**特殊字符** ：
-1.**标准输入(stdin):** 代码为0,使用<或<<;
-2.**标准输出(stdout):** 代码为1,使用>或>>;
-3.**标准错误输出(stderr):** 代码为3,使用2>或2>>.
+
+传送所用**特殊字符**：
+ 1.**标准输入(stdin):** 代码为0,使用<或<<;
+ 2.**标准输出(stdout):** 代码为1,使用>或>>;
+ 3.**标准错误输出(stderr):** 代码为3,使用2>或2>>.
 
 **例子：**
 ```
@@ -87,15 +88,23 @@ cat file test
 
 **注意：** Linux下面的命令都是由左向右执行的
 例子：
+```
 ls /tmp/abc && touch /tmp/abc/hehe
+```
 ![Alt text](./1531227991010.png)
 
+```
 ls /tmp/abc || mkdir  /tmp/abc
+```
 ![Alt text](./1531228101341.png)
 
+```
 ls /tmp/abc || mkdir /tmp/abc && touch /tmp/abc/hehe
+```
 执行过程：先判断是否有/tmp/abc 目录，没有则创建/tmp/abc目录，返回$?=0 然后与&& 判断为正确，则创建hehe文件 
 ![Alt text](./1531228167584.png)
 
+```
 ls /tmp/vbirding || echo "no exist" && echo "exist"
+```
 ![Alt text](./1531228569218.png)
