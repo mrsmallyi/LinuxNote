@@ -115,42 +115,21 @@ go! go! Let's go.
 ```
 练习
 (1) . 查找特定字符串
+
 ```
 #查找‘the’字符串
-[root@bogon ~]# grep -n 'the' regular_express.txt 
-8:I can't finish the test.
-12:the symbol '*' is represented as start.
-15:You are the best is mean you are the no. 1.
-16:The world <Happy> is the same with "glad".
-18:google is the best tools for search keyword.
-
-#反向选择，查找不是‘the’字符串
-[root@bogon ~]# grep -vn 'the' regular_express.txt 
-1:"Open Source" is a good mechanism to develop programs.
-2:apple is my favorite food.
-3:Football game is not use feet only.
-4:this dress doesn't fit me.
-5:However, this dress is about $ 3183 dollars.
-6:GNU is free air not free beer.
-7:Her hair is very beauty.
-9:Oh! The soup taste good.
-10:motorcycle is cheap than car.
-11:This window is clear.
-13:Oh!	My god!
-14:The gd software is a library for drafting programs.
-17:I like dog.
-19:goooooogle yes!
-20:go! go! Let's go.
-21:# I am VBird
-22:
-
-# 查找‘the’, 不区分大小写
-[root@bogon ~]# grep -in 'the' regular_express.txt 
-8:I can't finish the test.
-9:Oh! The soup taste good.
-12:the symbol '*' is represented as start.
-14:The gd software is a library for drafting programs.
-15:You are the best is mean you are the no. 1.
-16:The world <Happy> is the same with "glad".
-18:google is the best tools for search keyword.
+grep -n 'the' regular_express.txt 
 ```
+![20180730192937](images\regular\20180730192937.png)
+
+```
+#反向选择，查找不是‘the’字符串
+grep -vn 'the' regular_express.txt 
+```
+![20180730192652](images\regular\20180730192652.png)
+
+```
+#查找‘the’, 不区分大小写
+grep -in 'the' regular_express.txt 
+```
+![20180730191842](images\regular\20180730191842.png)
