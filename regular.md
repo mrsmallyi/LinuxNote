@@ -136,11 +136,13 @@ grep -in 'the' regular_express.txt
 
 (2). 利用中括号[] 来查找集合字符
 *	查找‘the’和‘taste’两个单词
+
 grep -n 't[ae]st' regular_express.txt
 
 ![20180730195948](images/regular/20180730195948.png)
 
 *	利用集合字符的反向选择[^]查找
+
  grep -n '[^g]oo' regular_express.txt 
  
 ![20180730200143](images/regular/20180730200143.png)
@@ -163,3 +165,29 @@ grep -n '[[:digit:]]' regular_express.txt
 grep -n '[^[:lower:]]oo' regular_express.txt
 
 ![20180730201231](images/regular/20180730201231.png)
+
+
+(3).行首与行尾字符^$
+
+* 查找以'the'开头
+
+ grep -n '^the' regular_express.txt 
+
+![20180730205954](images/regular/20180730205954.png)
+
+* 查找以'a-z'开头 
+
+grep -n '^[a-z]' regular_express.txt 
+
+![20180730205912](images/regular/20180730205912.png)
+
+* 查找以"\.“结尾, 需以"\"进行转义
+
+grep -n '\.$' regular_express.txt
+
+![20180730205832](images/regular/20180730205832.png)
+
+* 查找空白行
+grep -n '^$' regular_express.txt
+
+![20180730205812](images/regular/20180730205812.png)
