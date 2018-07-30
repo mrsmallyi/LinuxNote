@@ -225,3 +225,25 @@ grep -n 'g*g' regular_express.txt
 grep -n 'g.*g' regular_express.txt
 
 ![20180730215224](images/regular/20180730215224.png)
+
+**(5). 限定连续RE字符范围{}**
+
+	因为{与}符号在shell是有特殊意义的，因此必须使用转义字符\来让它失去特殊意义才行
+
+* 查找两个o的字符串
+
+grep -n 'o\\{2\\}' regular_express.txt 
+
+![20180730220352](images/regular/20180730220352.png)
+
+* 查找2到5个o的字符串
+
+grep -n 'o\\{2,5\\}' regular_express.txt 
+
+![20180730220725](images/regular/20180730220725.png)
+
+* 查找2个以上o的字符串
+
+grep -n 'o\\{2,\\}' regular_express.txt 
+
+![20180730220809](images/regular/20180730220809.png)
