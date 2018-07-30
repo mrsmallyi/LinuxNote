@@ -120,16 +120,46 @@ go! go! Let's go.
 #查找‘the’字符串
 grep -n 'the' regular_express.txt 
 ```
-![20180730192937](images\regular\20180730192937.png)
+![20180730192937](images/regular/20180730192937.png)
 
 ```
 #反向选择，查找不是‘the’字符串
 grep -vn 'the' regular_express.txt 
 ```
-![20180730192652](images\regular\20180730192652.png)
+![20180730192652](images/regular/20180730192652.png)
 
 ```
 #查找‘the’, 不区分大小写
 grep -in 'the' regular_express.txt 
 ```
-![20180730191842](images\regular\20180730191842.png)
+![20180730191842](images/regular/20180730191842.png)
+
+(2). 利用中括号[] 来查找集合字符
+*	查找‘the’和‘taste’两个单词
+grep -n 't[ae]st' regular_express.txt
+
+![20180730195948](images/regular/20180730195948.png)
+
+*	利用集合字符的反向选择[^]查找
+ grep -n '[^g]oo' regular_express.txt 
+ 
+![20180730200143](images/regular/20180730200143.png)
+
+注: 第19行goooooogle因为(ooo)满足要求，所以符号
+
+* 查找非小写字符开头字符
+
+grep -n '[^a-z]oo' regular_express.txt 
+
+![20180730200444](images/regular/20180730200444.png)
+ 
+grep -n [0-9] regular_express.txt 
+![20180730200755](images/regular/20180730200755.png)
+
+grep -n '[[:digit:]]' regular_express.txt
+
+![20180730200951](images/regular/20180730200951.png)
+
+grep -n '[^[:lower:]]oo' regular_express.txt
+
+![20180730201231](images/regular/20180730201231.png)
