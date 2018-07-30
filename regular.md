@@ -57,16 +57,100 @@ grep [-A] [-B] [--color=auto] '搜寻字符串' filename
 ```
 例子：
 
-1.1. 用dmesg列出内核信息，再以grep找出含eth的那行
+2.1. 用dmesg列出内核信息，再以grep找出含eth的那行
 
 ![20180726214005]( /images/regular/20180726214005.png)
 
-1.2.承上, 找到关键字显色，且加上行号表示
+2.2.承上, 找到关键字显色，且加上行号表示
 
 ![20180726213854]( /images/regular/20180726213854.png)
 
-1.3.承上,  找到关键字所在行的前2行与后1行也一起显示出来
+2.3.承上,  找到关键字所在行的前2行与后1行也一起显示出来
 
 ![20180726214657]( /images/regular/20180726214657.png)
 
 grep重要功能就是进行字符串数据的对比，然后进行符合用户需求的字符串打印出来。需要说明的是**grep在数据中查找一个字符串时，是以整行为单位来进行数据的选取的!**也就说，假如一个文件内有10行，其中有两行具有你所查找的字符串，则将那两行显示在屏幕上， 其他的就丢弃了。
+
+ 3. 基础正则表达式练习
+
+前提
+> 语系已经设置为“export LANG=C”的设置值；
+> grep 已经使用alias 设置为“grep --color=auto”.
+
+3.1. 设置语言与grep命令别名
+
+```
+export LANGE=C
+# '='号前后不能有空格
+alias grep="grep --color=auto" 
+```
+
+3.2.  下载练习文件
+```
+wget http://linux.vbird.org/linux_basic/0330regularex/regular_express.txt
+```
+文件内容
+```
+"Open Source" is a good mechanism to develop programs.
+apple is my favorite food.
+Football game is not use feet only.
+this dress doesn't fit me.
+However, this dress is about $ 3183 dollars.^M
+GNU is free air not free beer.^M
+Her hair is very beauty.^M
+I can't finish the test.^M
+Oh! The soup taste good.^M
+motorcycle is cheap than car.
+This window is clear.
+the symbol '*' is represented as start.
+Oh!     My god!
+The gd software is a library for drafting programs.^M
+You are the best is mean you are the no. 1.
+The world <Happy> is the same with "glad".
+I like dog.
+google is the best tools for search keyword.
+goooooogle yes!
+go! go! Let's go.
+# I am VBird
+```
+练习
+(1) . 查找特定字符串
+```
+#查找‘the’字符串
+[root@bogon ~]# grep -n 'the' regular_express.txt 
+8:I can't finish the test.
+12:the symbol '*' is represented as start.
+15:You are the best is mean you are the no. 1.
+16:The world <Happy> is the same with "glad".
+18:google is the best tools for search keyword.
+
+#反向选择，查找不是‘the’字符串
+[root@bogon ~]# grep -vn 'the' regular_express.txt 
+1:"Open Source" is a good mechanism to develop programs.
+2:apple is my favorite food.
+3:Football game is not use feet only.
+4:this dress doesn't fit me.
+5:However, this dress is about $ 3183 dollars.
+6:GNU is free air not free beer.
+7:Her hair is very beauty.
+9:Oh! The soup taste good.
+10:motorcycle is cheap than car.
+11:This window is clear.
+13:Oh!	My god!
+14:The gd software is a library for drafting programs.
+17:I like dog.
+19:goooooogle yes!
+20:go! go! Let's go.
+21:# I am VBird
+22:
+
+# 查找‘the’, 不区分大小写
+[root@bogon ~]# grep -in 'the' regular_express.txt 
+8:I can't finish the test.
+9:Oh! The soup taste good.
+12:the symbol '*' is represented as start.
+14:The gd software is a library for drafting programs.
+15:You are the best is mean you are the no. 1.
+16:The world <Happy> is the same with "glad".
+18:google is the best tools for search keyword.
+```
